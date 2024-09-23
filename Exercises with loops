@@ -1,0 +1,143 @@
+// Some of the texts were translated with Google Translate from Brazilian Portuguese to English.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int exercises;
+
+    cout << "What's the exercise number that you want to use: ";
+    cin >> exercises;
+
+    switch (exercises) {
+
+    case 1: {
+        // Write a program that displays the message “I won’t cheat on the test” 30 times on the screen
+        
+        int counter1 = 1;
+
+        while (counter1 <= 30){
+            cout << "I won’t cheat on the test." << endl;
+            counter1++;
+        }
+        break;
+    }
+    
+    case 2: {
+        // Write a program that displays the multiplication table for the number 5 in the following format: 
+        // 5 x 1 = 5; 5 x 2 = 10; 5 x 3 = 15; ... ; 5 x 10 = 50.
+
+        int multiplier1, result1;
+
+        for (multiplier1 = 1, result1 = 0; multiplier1 <= 10; multiplier1++){
+            result1 = multiplier1 * 5;
+            cout << "5x" << multiplier1 << " = " << result1 << endl;
+        }
+        break;
+    }
+
+    case 3: {
+        // Write a program that displays integers from 100 to 1 on the screen.
+
+        int counter2;
+
+        for (counter2 = 100; counter2 >= 1; counter2--){
+            cout << counter2 << endl;
+        }
+        break;
+    }
+
+    case 4: {
+        // Write a program that displays integers from 50 to 200 on the screen.
+
+        int counter3 = 50;
+        
+        while (counter3 <= 200){
+            cout << counter3 << endl;
+            counter3++;
+        }
+        break;
+    }
+
+    case 5: {
+        // Write a program that displays the sum of the integers in the range [100, 200]. 
+        // Example: sum = 100 + 101 + 102 + ... + 200.
+
+        int number1 = 100, sum = 0;
+        
+        while (number1 <= 200){
+            sum += number1;
+            number1++;
+        } cout << sum << endl;
+        break;
+    }
+
+    case 6: {
+        // Write a program that asks the user for two positive integer values that will be the base and the exponent. 
+        // The program must use a loop to calculate and display the result of the base raised to the exponent (power).
+
+        int number2, number3, result2 = 1;
+        
+        cout << "Enter two positive integers: " << endl;
+        cin >> number2 >> number3;
+        
+        for (int multiplier2 = 1; multiplier2 <= number3; multiplier2++){
+            result2 *= number2;
+        } 
+        cout << result2 << endl;
+        break;
+    }
+
+    case 7: {
+        // Write a program that prompts the user for an indeterminate number of integers. 
+        // The program must calculate and display the arithmetic mean of only the even numbers. 
+        // Data entry should terminate when the number 0 (ZERO) is entered.
+        
+        int number4, result3 = 0, average1 = 0;
+
+        cout << "(The program will terminate when receiving 0)" << endl << "Enter an integer: ";
+        
+        do {
+            cin >> number4;
+            
+            if (number4 % 2 == 0 and number4 != 0){
+                result3 += number4;
+                average1++;
+            }
+        } while (number4 != 0);
+        
+        int result4 = result3 / average1;
+        
+        cout << "The arithmetic mean of the even numbers is: " << result4;
+        break;
+    }
+
+    case 8: {
+        // Write a program that asks the user for a positive real number. 
+        // Check if the number is really positive, and if not, ask the user to enter it again.
+        // Outputs:
+        // User prompt = "Enter a positive real number";
+        // If valid number = "The number entered is valid";
+        // If invalid number = "Invalid number, please try again."
+
+        float number5 = -1;
+
+        cout << "Please enter a positive real number: ";
+        
+        while (number5 <= 0){
+            cin >> number5;
+            if (number5 < 0){
+                cout << "Invalid number. Please try again: ";
+            } else {
+                cout << "The number entered is valid.";
+            }
+        }
+        break;
+    }
+    
+    default:
+        cout << "There is no exercise that matches this number.";
+    }
+    return 0;
+}
