@@ -8,7 +8,7 @@ int main() {
     int menu;
     srand(time(NULL)); //Semente randomica gerada a partir da hora do sistema
 
-    //Loop pra ficar rodando o codigo ate ser selecionado a opcao de sair
+    //Loop (do while pra ficar rodando o codigo ate ser selecionado a opcao de sair que seria o 3
     do {
 
     system("cls");
@@ -18,7 +18,8 @@ int main() {
 
     switch(menu){
 
-    case 1:{ //Jogar
+    //Jogar
+    case 1:{
 
         system("cls"); //Comando pra limpar a tela
 
@@ -107,7 +108,8 @@ int main() {
     }
     break;
 
-    case 2:{ //Sobre
+    //Sobre
+    case 2:{
 
         system("cls");
         cout << "Membros do grupo: Henrique Gustavo Gonzaga Belli / Gabriel Paranaguá / Marlon Ranguet Zucchetti / Salomão Patrick Franca Alves Panas." << endl;
@@ -120,7 +122,8 @@ int main() {
     }
     break;
 
-    case 3: //Fim
+    //Fim
+    case 3:
 
         system("cls");
         cout << "Obrigado por jogar" << endl;
@@ -128,6 +131,7 @@ int main() {
 
     break;
 
+    //Qualquer outra coisa que nao seja as opcoes acima
     default:
 
         system("cls");
@@ -140,5 +144,5 @@ int main() {
     }while (menu != 3);
 
 
-    return 0;
+return 0;
 }
