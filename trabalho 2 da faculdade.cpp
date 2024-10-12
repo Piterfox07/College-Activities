@@ -13,7 +13,7 @@ int main() {
 
     system("cls");
 
-    cout << "1 - Jogar\n2 - Sobre\n3 - Fim \n\n Selecione o número que corresponde ao que você deseja fazer: ";
+    cout << "1 - Jogar\n2 - Sobre\n3 - Fim \n\n Selecione o que deseja fazer: ";
     cin >> menu;
 
     switch(menu){
@@ -84,7 +84,7 @@ int main() {
             //Atualiza o contador de tentativas
             if (letras_acertadas == 0) {
                 tentativas_restantes--;
-                cout << "Essa palavra não possui a letra " << tentativa << endl;
+                cout << "\nEssa palavra não possui a letra " << tentativa << "\n\n";
                 system("pause");
             }
 
@@ -92,7 +92,7 @@ int main() {
             if (letra1 == espaco1 && letra2 == espaco2 && letra3 == espaco3 && letra4 == espaco4 && letra5 == espaco5 && letra6 == espaco6) {
                 system("cls");
                 cout << "\nPalavra: " << espaco1 << ' ' << espaco2 << ' ' << espaco3 << ' ' << espaco4 << ' ' << espaco5 << ' ' << espaco6 << endl;
-                cout << "\nParabéns! Você adivinhou a palavra!\n";
+                cout << "\nParabéns! Você adivinhou a palavra!\n" << endl;
                 system("pause"); //Comando pra pausar a tela ate ser apertado algum botao
                 break;
             }
@@ -101,7 +101,7 @@ int main() {
         //Verificador de derrota + mensagem de derrota
         if (tentativas_restantes == 0) {
             system("cls");
-            cout << "\nVocê perdeu!\n";
+            cout << "\nVocê perdeu!\n\n";
             system("pause");
         }
     }
@@ -115,7 +115,7 @@ int main() {
         cout << "Mês e ano da realização deste trabalho: outubro/2024)" << endl;
         cout << "Nome do professor: Rafael Ballotin Martins." << endl;
         cout << "Disciplina: Algoritmos e Programação." << endl;
-        cout << "OBS.: O programa reconhece somente letras maiúsculas nas tentativas, e somente o uso de UM CARACTERE por vez." << endl;
+        cout << "OBS.: O programa reconhece somente letras maiúsculas nas tentativas, e somente o uso de UM CARACTERE por vez.\n\n";
         system("pause");
 
     }
@@ -125,7 +125,7 @@ int main() {
     case 3:
 
         system("cls");
-        cout << "Obrigado por jogar" << endl;
+        cout << "Obrigado por jogar\n\n";
         system("pause");
 
     break;
