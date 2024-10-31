@@ -150,3 +150,163 @@ int main() {
 
     return 0;
 }
+
+// 11 - Write a program that fills a 5x5 matrix with the element one in all positions.
+
+#include <iostream>
+using namespace std;
+
+#define SIZE 5
+
+int main() {
+    
+    int matrix[SIZE][SIZE], row, column;
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            matrix[row][column] = 1;
+        }
+    }
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << matrix[row][column] << "\t";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+// 12 - Write a program that fills a 5x5 matrix with the element one in all positions 
+// where the row index is equal to the column index.
+
+#include <iostream>
+using namespace std;
+
+#define SIZE 5
+
+int main() {
+    
+    int matrix[SIZE][SIZE] = {0}, row, column;
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            if (row == column) {
+                matrix[row][column] = 1;
+            }
+        }
+    }
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << matrix[row][column] << "\t";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+// 13 - Write a program that prompts the user for 25 real values and stores them in a 5x5 matrix. 
+// Then replace all elements in the matrix that are greater than 100 with the value zero. 
+// Display the original and modified matrices.
+
+#include <iostream>
+using namespace std;
+
+#define SIZE 5
+
+int main() {
+    
+    int matrix[SIZE][SIZE] = {0}, row, column;
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << "Enter the number for row " << row + 1 << " and column " << column + 1 << ": ";
+            cin >> matrix[row][column];
+        }
+    }
+    
+    cout << "Modified matrix: \n\n";
+
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            if (matrix[row][column] > 100) {
+                cout << 0 << "\t";
+            } else { 
+                cout << matrix[row][column] << "\t";
+            }
+        }
+        cout << endl;
+    }
+    
+    cout << endl << endl;
+    cout << "Original matrix: \n\n";
+
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << matrix[row][column] << "\t";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+// 14 - Write a program that fills a 5x5 matrix with the element one in all positions 
+// where the row index is greater than the column index.
+
+#include <iostream>
+using namespace std;
+
+#define SIZE 5
+
+int main() {
+    
+    int matrix[SIZE][SIZE] = {0}, row, column;
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            if (row > column) {
+                matrix[row][column] = 1;
+            }
+        }
+    }
+
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << matrix[row][column] << "\t";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+
+// 15 - Write a program that reads a 4x4 matrix and then calculates the sum of all
+// elements contained in the main diagonal. Display the result.
+
+#include <iostream>
+using namespace std;
+
+#define SIZE 4
+
+int main() {
+    
+    int matrix[SIZE][SIZE], row, column, sum = 0;
+    
+    for (row = 0; row < SIZE; row++) {
+        for (column = 0; column < SIZE; column++) {
+            cout << "Enter the number for row " << row + 1 << " and column " << column + 1 << ": ";
+            cin >> matrix[row][column];
+            if (row == column) {
+                sum += matrix[row][column];
+            }
+        }
+    }
+    
+    cout << endl << "The sum of the numbers on the main diagonal is: " << sum;
+    
+    return 0;
+}
