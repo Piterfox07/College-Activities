@@ -2,16 +2,10 @@
 #include <time.h> //Bliblioteca pra usar o comando de randomizador
 using namespace std;
 
-#define BIG 9 // Define o "BIG" com o valor constante de 9
-#define POSICOES 41 // Define "POSICOES" como 41 pra ser ultilizado na hora de preencher a "matriz jogo"
+#define BIG 9        //Define "BIG" com o valor constante de 9
+#define POSICOES 41        //Define "POSICOES" como 41 pra ser ultilizado na hora de preencher a "matriz jogo"
 
 int main(){
-
-
-        // - Colocar os comentarios certos XXX
-        // - zerar a matriz jogo no comeco do codigo   X (ver se funciona)
-
-
 
     srand(time(NULL)); //Semente randomica gerada a partir da hora do sistema
 
@@ -26,15 +20,14 @@ int main(){
                                     8, 7, 9, 3, 2, 1, 5, 4, 6};
 
     int menu, i, j, NumeroRandom, posicoesPreenchidas, Linha, Coluna, Tentativa, Jogadas, Acertos;
-    int MatrizGabarito[BIG][BIG];
-    int MatrizJogo[BIG][BIG];
+    int MatrizGabarito[BIG][BIG], MatrizJogo[BIG][BIG];
 
 
     do { //Loop (do while) para ficar rodando o código ate ser selecionado a opção de sair que seria o 3
 
         system("cls");
 
-            // Zera a "matriz jogo" novamente para quando a opção "1 - Jogar" for selecionada novamente.
+            // Zera a "matriz jogo".
             for (i = 0; i < BIG; i++){
                 for (j = 0; j < BIG; j++){
                     MatrizJogo[i][j] = 0;
@@ -43,7 +36,6 @@ int main(){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------------------
-
 
         cout << "1 - Jogar\n2 - Sobre\n3 - Fim \n\n Selecione o que deseja fazer: ";
         cin >> menu;
@@ -56,7 +48,7 @@ int main(){
         //Jogar
         case 1:
 
-            system("cls"); //Comando pra limpar a tela
+            system("cls");
 
             NumeroRandom = rand() % 4; // Transforma a variavel "NumeroRandom" em um número aleatório dentre 4 números toda vez que a opção 1 for selecionada no "menu".
 
@@ -105,7 +97,7 @@ int main(){
 
             posicoesPreenchidas = 0;
 
-            while (posicoesPreenchidas < POSICOES){ // Loop pra preencher as 41 posições aleatóriamente da "matriz jogo" de acordo com a constante POSICOES
+            while (posicoesPreenchidas < POSICOES){ // Loop pra preencher as 41 posições aleatóriamente da "matriz jogo" de acordo com a constante POSICOES (que tem o valor de 41
                 int LinhaTemp = rand() % BIG;  // Toda vez que o loop rodar vai ser ultilizado uma linha aleatória
                 int ColunaTemp = rand() % BIG;  // Toda vez que o loop rodar vai ser ultilizado uma coluna aleatória
 
