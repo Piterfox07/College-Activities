@@ -53,37 +53,37 @@ int main(){
             NumeroRandom = rand() % 4; // Transforma a variavel "NumeroRandom" em um número aleatório dentre 4 números toda vez que a opção 1 for selecionada no "menu".
 
                 switch(NumeroRandom){
-  
-  
+
+
                     case 0: // Transforma a "matriz gabarito" na matriz ORIGINAL:
-  
+
                         for (i = 0; i < BIG; i++){
                             for (j = 0; j < BIG; j++){
                                 MatrizGabarito[i][j] = MatrizOriginal[i][j];
                             }
                         }
                         break;
-    
+
                     case 1: // Transforma a "matriz gabarito" na matriz TRANSPOSTA:
-                            
+
                         for (i = 0; i < BIG; i++){
                             for (j = 0; j < BIG; j++){
                                 MatrizGabarito[i][j] = MatrizOriginal[j][i]; // Transpõe a matriz original simplesmente trocando a ordem de linha por coluna da versão original
                             }
-                        }  
+                        }
                         break;
-  
+
                     case 2: // Transforma a "matriz gabarito" na matriz com as LINHAS INVERTIDAS:
-                            
+
                         for (i = 0; i < BIG; i++){
                             for (j = 0; j < BIG; j++){
                                 MatrizGabarito[i][j] = MatrizOriginal[BIG-1-i][j]; // O programa vai usar o valor de BIG(= 9) - 1 para obter o "tamanho real" da matriz, que vai de 0 a 8, seguindo a ordem da operação, será subtraído o valor atual da linha para obter a posição inversa.
                             }
                         }
                         break;
-   
+
                     case 3: // Transforma a "matriz gabarito" na matriz com as COLUNAS INVERTIDAS:
-    
+
                         for (i = 0; i < BIG; i++){
                             for (j = 0; j < BIG; j++){
                                 MatrizGabarito[i][j] = MatrizOriginal[i][BIG-1-j]; // Inverte as colunas usando a mesma lógica de inversão das linhas ^
@@ -97,7 +97,7 @@ int main(){
 
             posicoesPreenchidas = 0;
 
-            while (posicoesPreenchidas < POSICOES){ // Loop pra preencher as 41 posições aleatóriamente da "matriz jogo" de acordo com a constante POSICOES (que tem o valor de 41
+            while (posicoesPreenchidas < POSICOES){ // Loop pra preencher as 41 posições aleatóriamente da "matriz jogo" de acordo com a constante POSICOES (que tem o valor de 41)
                 int LinhaTemp = rand() % BIG;  // Toda vez que o loop rodar vai ser ultilizado uma linha aleatória
                 int ColunaTemp = rand() % BIG;  // Toda vez que o loop rodar vai ser ultilizado uma coluna aleatória
 
@@ -114,15 +114,15 @@ int main(){
             Jogadas = 0; // Define a quantidade de tentativas pra 0.
 
             while (Acertos < POSICOES){ // Loop que vai manter o jogo rodando enquanto nao for completamente preenchido.
-            
+
                 // Mostra a "matriz jogo" ao jogador.
                 for (i = 0; i < BIG; i++){
                     cout << "\t";
-                    for (j = 0; j < BIG; j++)
-                        if (MatrizJogo[i][j] == 0)
-                            cout << "_\t"
+                    for (j = 0; j < BIG; j++){
+                        if (MatrizJogo[i][j] == 0){
+                            cout << "_\t";
                         } else {
-                            cout << MatrizJogo[i][j] << "\t"
+                            cout << MatrizJogo[i][j] << "\t";
                         }
                     }
                     cout << "\n\n";
